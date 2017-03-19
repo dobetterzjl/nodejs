@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/stylesheets/user2.css">
+</head>
+<body>
+    <form method="post" action="/regist">
+        <p>
+        用户名：<input type="text" name="username" >
+        </p>
+        <p>
+        密码:<input type="password" name="password">
+        </p>
+        <p>
+        <input type="radio" value="男" name="sex">男
+        <input type="radio" value="女" name="sex">女
+        </p>
+        <input type="submit" value="注册">
+    </form>
+<script src="/javascripts/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('[name="username"]').on('blur',function(){
+            $('.error').remove();
+            if(this.value==''){
+                $('.error').remove();
+                $(this).after("<span class='error'>内容不能为空</span>");
+            }
+        });
+    })
+
+</script>
+</body>
+</html>

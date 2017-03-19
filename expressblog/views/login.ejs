@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/stylesheets/user2.css">
+</head>
+<body>
+    <p>请登录</p>
+    <form method="post" action="/welcome">
+        用户名：<input type="text" name="username" >
+        密码:<input type="password" name="password">
+        <input type="submit" value="登录">
+    </form>
+<script src="/javascripts/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('[name="username"]').on('blur',function(){
+            $('.error').remove();
+            if(this.value==''){
+                $('.error').remove();
+                $(this).after("<span class='error'>内容不能为空</span>");
+            }
+        });
+    })
+
+</script>
+</body>
+</html>
